@@ -9,6 +9,7 @@ import (
 	"strings"
 
 	"github.com/doraemonkeys/doraemon"
+	"github.com/doraemonkeys/sedr/version"
 )
 
 const usage = `Usage: sedr <regex> <original> <substitution> <file>
@@ -38,6 +39,10 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 		fmt.Println(usage)
+		fmt.Println()
+		fmt.Println("Version:", version.Version)
+		fmt.Println("Build Hash:", version.BuildHash)
+		fmt.Println("Build Time:", version.BuildTime)
 		os.Exit(1)
 	}
 
