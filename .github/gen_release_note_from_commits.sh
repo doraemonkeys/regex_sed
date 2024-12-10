@@ -34,5 +34,9 @@ fi
     git log --pretty=format:"* %h %s by %an@" --grep="^chore\|^docs\|^refactor" -i "$version_range" | sort -f | uniq
     echo ""
     # substitute your username and repo
-    echo "**Full Changelog**: https://github.com/doraemonkeys/sedr/compare/$version_range"
+    if [[ "$version_range" == *...* ]]; then
+        echo "**Full Changelog**: https://github.com/doraemonkeys/sedr/compare/$version_range"
+    else
+        echo "**Full Changelog**: https://github.com/doraemonkeys/sedr/commits/$version_range"
+    fi
 } >release.md
