@@ -11,7 +11,8 @@ BRANCH=$(git branch --show-current)
 COMMIT_SHORT_HASH=$(git rev-parse --short HEAD)
 COMMIT_HASH=$(git rev-parse HEAD)
 BUILD_TIME=$(date -Iseconds --utc)
-BUILD_TAG=$(git describe --tags --abbrev=0 || echo 'unknown')
+# BUILD_TAG=$(git describe --tags --abbrev=0 || echo 'unknown')
+BUILD_TAG=$(git tag --sort=-creatordate | head -n 1 || echo 'unknown')
 
 ZIP_NAME=${BRANCH}-${BUILD_TAG}-${COMMIT_SHORT_HASH}
 if [ "$BRANCH" = "main" ] || [ "$BRANCH" = "master" ]; then

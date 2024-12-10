@@ -21,7 +21,6 @@ jobs:
         run: |
           git fetch --tags || true
           git tag --sort=-creatordate | head -n 1
-          git tag --list
 
       - name: Setup Go
         uses: actions/setup-go@v5
@@ -65,9 +64,8 @@ jobs:
 
       - name: Fetch tags
         run: |
-          git fetch --tags
-          git describe --tags --abbrev=0
-          git tag --list
+          git fetch --tags || true
+          git tag --sort=-creatordate | head -n 1
 
       - name: Setup Go
         uses: actions/setup-go@v5
@@ -113,9 +111,8 @@ jobs:
 
       - name: Fetch tags
         run: |
-          git fetch --tags
-          git describe --tags --abbrev=0
-          git tag --list
+          git fetch --tags || true
+          git tag --sort=-creatordate | head -n 1
 
       - name: Setup Go
         uses: actions/setup-go@v5
