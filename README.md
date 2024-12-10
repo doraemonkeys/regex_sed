@@ -37,5 +37,5 @@ This command will change date formats from YYYY-MM-DD to YYYY-DD-MM in file.txt.
 ## Installation
 
 ```
-go install github.com/doraemonkeys/sedr
+go install github.com/doraemonkeys/sedr@latest
 ```
