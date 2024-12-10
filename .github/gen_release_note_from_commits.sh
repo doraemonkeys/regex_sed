@@ -25,13 +25,13 @@ fi
 
 {
     echo "## What's Changed"
-    git log --pretty=format:"* %h %s by @%an" --grep="^feat" -i "$version_range" | sort -f | uniq
+    git log --pretty=format:"* %h %s by %an@" --grep="^feat" -i "$version_range" | sort -f | uniq
     echo ""
     echo "## BUG & Fix"
-    git log --pretty=format:"* %h %s by @%an" --grep="^fix" -i "$version_range" | sort -f | uniq
+    git log --pretty=format:"* %h %s by %an@" --grep="^fix" -i "$version_range" | sort -f | uniq
     echo ""
     echo "## Maintenance"
-    git log --pretty=format:"* %h %s by @%an" --grep="^chore\|^docs\|^refactor" -i "$version_range" | sort -f | uniq
+    git log --pretty=format:"* %h %s by %an@" --grep="^chore\|^docs\|^refactor" -i "$version_range" | sort -f | uniq
     echo ""
     # substitute your username and repo
     echo "**Full Changelog**: https://github.com/doraemonkeys/sedr/compare/$version_range"
