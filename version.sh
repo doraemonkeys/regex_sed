@@ -26,6 +26,6 @@ read -n 1 -s -r -p "Press any key to continue..."
 
 git add "$PROJECT_VERSION_FILE_PATH"
 git commit -m "release: v$PROJECT_VERSION"
-git push
 git tag "v$PROJECT_VERSION"
+git push
 git push origin "v$PROJECT_VERSION"
