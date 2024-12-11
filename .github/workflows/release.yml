@@ -200,3 +200,4 @@ jobs:
             ./Downloaded-Archives/*
           draft: true
           body_path: ./release.md
+          generate_release_notes: true

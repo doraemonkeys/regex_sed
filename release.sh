@@ -155,7 +155,7 @@ main() {
         echo "COMMITHASH: $COMMIT_HASH"
         echo "BUILD_TAG: $BUILD_TAG"
         echo "BUILD_TIME: $BUILD_TIME"
-    } >version.txt
+    } >"${BIN_DIR}"/version.txt
 
     echo "Build complete."
 
