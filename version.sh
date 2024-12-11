@@ -21,3 +21,11 @@ echo "PROJECT_VERSION: $PROJECT_VERSION"
 
 # modify version.go (Version = "x.x.x")
 sedr 'Version[\s]+=[\s]+\"(.*?)\"' "\$1" "$PROJECT_VERSION" "$PROJECT_VERSION_FILE_PATH"
+
+read -n 1 -s -r -p "Press any key to continue..."
+
+git add "$PROJECT_VERSION_FILE_PATH"
+git commit -m "release: v$PROJECT_VERSION"
+git push
+git tag "v$PROJECT_VERSION"
+git push origin "v$PROJECT_VERSION"
